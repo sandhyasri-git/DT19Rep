@@ -7,6 +7,7 @@ body {
 </head>
 
 <hr/>
+
 <img src="images/MI.jpg" alt="mike" height="200" width="200"/>
 <img src="images/music3.jpg" alt="mike" height="200" width="200"/>
 <img src="images/music5.png" alt="mike" height="200" width="200"/>
