@@ -38,7 +38,9 @@ public class ApplicationContextConfig {
 		Properties prop=new Properties();
 		prop.put("hibernate.show_sql", "true");
 		prop.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-		prop.put("hibernate.hbm2ddl.auto", "create");
+		prop.put("hibernate.hbm2ddl.auto", "update");
+		prop.put("hibernate.current_session_context_class","thread");
+
 		System.out.println("Hibernate Properties");
 		return prop;
 	}
@@ -52,6 +54,7 @@ public class ApplicationContextConfig {
 		System.out.println("Session Factory");
 		return sessionBuilder.buildSessionFactory();
 	}
+	
 	@Autowired
 	@Bean(name="transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)
@@ -60,6 +63,7 @@ public class ApplicationContextConfig {
 		System.out.println("Transaction Manager");
 		return transactionManager;
 	}
+	
 	@Autowired
 	@Bean(name="userDAO")
 	public UserDAO getUserDAO(SessionFactory sessionFactory)

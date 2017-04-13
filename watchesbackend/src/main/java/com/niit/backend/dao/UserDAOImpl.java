@@ -26,10 +26,10 @@ public class UserDAOImpl implements UserDAO {
 
 	public UserDAOImpl(SessionFactory sessionFactory) {
 		super();
-		//this.sessionFactory = sessionFactory;
+		this.sessionFactory = sessionFactory;
 	}
 
-	@Transactional
+	//@Transactional
 	public boolean saveOrUpdate(User user) {
 	
 		Session s=sessionFactory.getCurrentSession();
